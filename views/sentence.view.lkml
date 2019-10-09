@@ -59,6 +59,7 @@ view: sentence {
     fields: [
       location.location,
       review.review_published_date,
+      review.review_text_short,
       review.source,
       review.rating_stars,
       sentiment_label

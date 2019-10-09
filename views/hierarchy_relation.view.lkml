@@ -45,7 +45,7 @@ view: hierarchy_relation {
   measure: count {
     label: "Relations"
     type: count
-    drill_fields: [object, entity, count]
+    drill_fields: [detail*, object, entity, count]
   }
 
   # ----- Sets of fields for drilling ------
@@ -53,6 +53,7 @@ view: hierarchy_relation {
     fields: [
       location.location,
       review.review_published_date,
+      review.review_text_short,
       review.source,
       review.rating_stars,
       sentiment_label
