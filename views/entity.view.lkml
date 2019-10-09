@@ -46,7 +46,7 @@ view: entity {
   measure: count {
     label: "Entities"
     type: count
-    drill_fields: [entity_type, entity, count]
+    drill_fields: [detail*, entity_type, entity, count]
   }
 
   # ----- Sets of fields for drilling ------
@@ -54,6 +54,7 @@ view: entity {
     fields: [
       location.location,
       review.review_published_date,
+      review.review_text_short,
       review.source,
       review.rating_stars,
       sentiment_label
