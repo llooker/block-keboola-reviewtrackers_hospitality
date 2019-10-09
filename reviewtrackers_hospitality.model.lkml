@@ -3,7 +3,7 @@ connection: "reviewtrackers_hospitality"
 include: "/views/**/*.view"
 
 # include all lookml dashboards
-#include: "*.dashboard.lookml"
+include: "*.dashboard.lookml"
 
 datagroup: reviewtrackers_default_datagroup {
   sql_trigger: SELECT MAX(REVIEW_ID) FROM REVIEW;;
