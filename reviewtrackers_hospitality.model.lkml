@@ -1,4 +1,4 @@
-connection: "reviewtrackers_hospitality"
+connection: "@{connection}"
 
 include: "/views/**/*.view"
 
