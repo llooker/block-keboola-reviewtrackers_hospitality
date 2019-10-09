@@ -200,6 +200,15 @@ view: review {
     drill_fields: [detail*, count]
   }
 
+  measure: responded_reviews {
+    type: count
+    filters: {
+      field: has_response
+      value: "true"
+    }
+    drill_fields: [detail*, responded_reviews]
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
