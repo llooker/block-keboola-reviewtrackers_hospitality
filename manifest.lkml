@@ -1,3 +1,3 @@
 constant: connection {
-  value: "reviewtrackers_hospitality"
+  value: "block_reviewtrackers_hospitality"
 }
