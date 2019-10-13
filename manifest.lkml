@@ -1,3 +1,3 @@
 constant: connection {
-  value: "block_reviewtrackers_hospitality"
+  value: "keboola_block_reviewtrackers_hospitality"
 }
