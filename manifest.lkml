@@ -1,3 +1,3 @@
 constant: connection {
-  value: "cleveland_ave_txa_demo"
+  value: "wow_bao_txa_us-6907"
 }
