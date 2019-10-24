@@ -1,0 +1,35 @@
+{
+  "label": "Reviewtrackers Restaurant Reviews",
+  "category_label": "Models",
+  "branding": {
+    "image_uri": "https://www.keboola.com/data/poweredByKeboola.png",
+    "tagline": "Understanding the voice of your customers has never been more important. Keboola’s Restaurant Reviews Block in partnership with ReviewTrackers gives you a detailed overview of your ratings and reviews, their topics, and a quick view of issues and opportunities. The included Natural Language Processing engine is specifically trained for this Block, and can be expanded to recognize and flag mentions, for example of specific menu items."
+  },
+
+  "constants": {
+    "CONNECTION": {
+      "label": "Connection Name",
+      "value_constraint": "connection"
+    },
+    "SCHEMA_NAME": {
+      "label": "Schema Name"
+    },
+    "CONFIG_PROJECT_NAME": {
+      "label": "Config Project Name"
+    }
+  },
+  "models": [
+    {
+      "name": "block-keboola-reviewtrackers_hospitality",
+      "connection_constant": "CONNECTION"
+    }
+  ],
+  "auxiliary_projects": [
+    {
+      "git_uri": "git://bitbucket.org/kds_consulting_team/marketplace_reviewtrackers_hospitality_config",
+      "git_ref": "155a10e365f9b8b7b6fb65b27ce728759c68ead8",
+      "label": "Reviewtrackers Restaurant Reviews Config",
+      "constant_name": "CONFIG_PROJECT_NAME"
+    }
+  ]
+}
