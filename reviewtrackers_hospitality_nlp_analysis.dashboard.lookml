@@ -2,65 +2,6 @@
   title: ReviewTrackers Hospitality NLP Analysis
   layout: newspaper
   elements:
-  - title: Locations Reviews Sentiment
-    name: Locations Reviews Sentiment
-    model: reviewtrackers_hospitality
-    explore: review
-    type: looker_bar
-    fields: [review.count, entity.sentiment_label, location.location]
-    pivots: [entity.sentiment_label]
-    filters:
-      entity.sentiment_label: "-NULL"
-    sorts: [review.count desc 3, entity.sentiment_label 0]
-    limit: 10
-    column_limit: 50
-    row_total: right
-    color_application:
-      collection_id: legacy
-      palette_id: legacy_diverging1
-      options:
-        steps: 5
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: false
-    y_axes: [{label: '', orientation: bottom, series: [{axisId: negative - review.count,
-            id: negative - review.count, name: negative}, {axisId: neutral - review.count,
-            id: neutral - review.count, name: neutral}, {axisId: positive - review.count,
-            id: positive - review.count, name: positive}], showLabels: false, showValues: true,
-        unpinAxis: false, tickDensity: default, tickDensityCustom: 5, type: linear}]
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: false
-    show_x_axis_ticks: true
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: normal
-    limit_displayed_rows: false
-    legend_position: center
-    series_types: {}
-    point_style: none
-    show_value_labels: false
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
-    listen:
-      Date: review.review_published_date
-      Location: location.location
-      Source: review.source
-    row: 6
-    col: 0
-    width: 10
-    height: 6
   - title: Top 10 Entities Sentiment
     name: Top 10 Entities Sentiment
     model: reviewtrackers_hospitality
@@ -116,14 +57,103 @@
       Date: review.review_published_date
       Location: location.location
       Source: review.source
-    row: 0
+    row: 2
     col: 0
     width: 10
+    height: 6
+  - title: Locations Reviews Sentiment
+    name: Locations Reviews Sentiment
+    model: reviewtrackers_hospitality
+    explore: review
+    type: looker_bar
+    fields: [review.count, entity.sentiment_label, location.location]
+    pivots: [entity.sentiment_label]
+    filters:
+      entity.sentiment_label: "-NULL"
+    sorts: [review.count desc 3, entity.sentiment_label 0]
+    limit: 10
+    column_limit: 50
+    row_total: right
+    color_application:
+      collection_id: legacy
+      palette_id: legacy_diverging1
+      options:
+        steps: 5
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: false
+    y_axes: [{label: '', orientation: bottom, series: [{axisId: negative - review.count,
+            id: negative - review.count, name: negative}, {axisId: neutral - review.count,
+            id: neutral - review.count, name: neutral}, {axisId: positive - review.count,
+            id: positive - review.count, name: positive}], showLabels: false, showValues: true,
+        unpinAxis: false, tickDensity: default, tickDensityCustom: 5, type: linear}]
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: false
+    show_x_axis_ticks: true
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    plot_size_by_field: false
+    trellis: ''
+    stacking: normal
+    limit_displayed_rows: false
+    legend_position: center
+    series_types: {}
+    point_style: none
+    show_value_labels: false
+    label_density: 25
+    x_axis_scale: auto
+    y_axis_combined: true
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    listen:
+      Date: review.review_published_date
+      Location: location.location
+      Source: review.source
+    row: 8
+    col: 0
+    width: 10
+    height: 6
+  - title: Rating 5
+    name: Rating 5
+    model: reviewtrackers_hospitality
+    explore: review
+    type: table
+    fields: [attribute_relation.subject, review.count]
+    filters:
+      review.rating_dimension: '5'
+      attribute_relation.subject: "-NULL"
+    sorts: [review.count desc]
+    limit: 10
+    show_view_names: false
+    show_row_numbers: true
+    truncate_column_names: false
+    hide_totals: false
+    hide_row_totals: false
+    table_theme: gray
+    limit_displayed_rows: false
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    series_types: {}
+    listen:
+      Date: review.review_published_date
+      Location: location.location
+      Source: review.source
+    row: 22
+    col: 4
+    width: 4
     height: 6
   - name: Most Mentioned Subjects by Rating
     type: text
     title_text: Most Mentioned Subjects by Rating
-    row: 18
+    row: 20
     col: 4
     width: 20
     height: 2
@@ -142,7 +172,7 @@
       Date: review.review_published_date
       Location: location.location
       Source: review.source
-    row: 12
+    row: 14
     col: 0
     width: 10
     height: 6
@@ -199,38 +229,8 @@
       Date: review.review_published_date
       Location: location.location
       Source: review.source
-    row: 20
+    row: 22
     col: 0
-    width: 4
-    height: 6
-  - title: Rating 5
-    name: Rating 5
-    model: reviewtrackers_hospitality
-    explore: review
-    type: table
-    fields: [attribute_relation.subject, review.count]
-    filters:
-      review.rating_dimension: '5'
-      attribute_relation.subject: "-NULL"
-    sorts: [review.count desc]
-    limit: 10
-    show_view_names: false
-    show_row_numbers: true
-    truncate_column_names: false
-    hide_totals: false
-    hide_row_totals: false
-    table_theme: gray
-    limit_displayed_rows: false
-    enable_conditional_formatting: false
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    series_types: {}
-    listen:
-      Date: review.review_published_date
-      Location: location.location
-      Source: review.source
-    row: 20
-    col: 4
     width: 4
     height: 6
   - title: Rating 4
@@ -259,7 +259,7 @@
       Date: review.review_published_date
       Location: location.location
       Source: review.source
-    row: 20
+    row: 22
     col: 8
     width: 4
     height: 6
@@ -289,7 +289,7 @@
       Date: review.review_published_date
       Location: location.location
       Source: review.source
-    row: 20
+    row: 22
     col: 12
     width: 4
     height: 6
@@ -319,7 +319,7 @@
       Date: review.review_published_date
       Location: location.location
       Source: review.source
-    row: 20
+    row: 22
     col: 16
     width: 4
     height: 6
@@ -349,125 +349,17 @@
       Date: review.review_published_date
       Location: location.location
       Source: review.source
-    row: 20
+    row: 22
     col: 20
     width: 4
     height: 6
   - name: Sentiment KPI
     type: text
     title_text: Sentiment KPI
-    row: 18
+    row: 20
     col: 0
     width: 4
     height: 2
-  - title: Top Attribute Relations w/ Negative Sentiment
-    name: Top Attribute Relations w/ Negative Sentiment
-    model: reviewtrackers_hospitality
-    explore: review
-    type: looker_bar
-    fields: [attribute_relation.subject, attribute_relation.attribute, attribute_relation.count]
-    filters:
-      attribute_relation.attribute_sentiment_value: "<0"
-    sorts: [attribute_relation.count desc]
-    limit: 10
-    color_application:
-      collection_id: legacy
-      palette_id: santa_cruz
-      options:
-        steps: 5
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: false
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: normal
-    limit_displayed_rows: false
-    legend_position: center
-    series_types: {}
-    point_style: none
-    series_colors:
-      attribute_relation.count: "#ed6168"
-    show_value_labels: false
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
-    hidden_fields: []
-    listen:
-      Date: review.review_published_date
-      Location: location.location
-      Source: review.source
-    row: 0
-    col: 10
-    width: 14
-    height: 6
-  - title: Top Attribute Relations w/ Positive Sentiment
-    name: Top Attribute Relations w/ Positive Sentiment
-    model: reviewtrackers_hospitality
-    explore: review
-    type: looker_bar
-    fields: [attribute_relation.subject, attribute_relation.attribute, attribute_relation.count]
-    filters:
-      attribute_relation.attribute_sentiment_value: ">0"
-    sorts: [attribute_relation.count desc]
-    limit: 10
-    color_application:
-      collection_id: legacy
-      palette_id: santa_cruz
-      options:
-        steps: 5
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: false
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: normal
-    limit_displayed_rows: false
-    legend_position: center
-    series_types: {}
-    point_style: none
-    series_colors:
-      attribute_relation.count: "#49cec1"
-    show_value_labels: false
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
-    hidden_fields: []
-    listen:
-      Date: review.review_published_date
-      Location: location.location
-      Source: review.source
-    row: 6
-    col: 10
-    width: 14
-    height: 6
   - title: Top Hierarchy Relations
     name: Top Hierarchy Relations
     model: reviewtrackers_hospitality
@@ -517,7 +409,137 @@
       Date: review.review_published_date
       Location: location.location
       Source: review.source
-    row: 12
+    row: 14
+    col: 10
+    width: 14
+    height: 6
+  - name: 'scaffold'
+    type: text
+    subtitle_text: <font size="5px"><font color="#408ef7"><b>Hospitality Reviews</b></font>
+    row: 0
+    col: 0
+    width: 7
+    height: 2
+  - name: 'dashboard'
+    type: text
+    subtitle_text: <font size="5px"><font color="#408ef7"><b>NLP Analysis</b></font>
+    row: 0
+    col: 7
+    width: 11
+    height: 2
+  - name: 'powered by'
+    type: text
+    body_text: <a href="https://keboola.com" target="_blank"> <img src="https://www.keboola.com/data/poweredByKeboola.png"
+      width="100%"/>
+    row: 0
+    col: 18
+    width: 6
+    height: 2
+  - title: Top Attribute Relations w/ Negative Sentiment
+    name: Top Attribute Relations w/ Negative Sentiment
+    model: reviewtrackers_hospitality
+    explore: review
+    type: looker_bar
+    fields: [attribute_relation.subject, attribute_relation.attribute, attribute_relation.count]
+    filters:
+      attribute_relation.sentiment_label: negative
+    sorts: [attribute_relation.count desc]
+    limit: 10
+    color_application:
+      collection_id: legacy
+      palette_id: santa_cruz
+      options:
+        steps: 5
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: false
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    plot_size_by_field: false
+    trellis: ''
+    stacking: normal
+    limit_displayed_rows: false
+    legend_position: center
+    series_types: {}
+    point_style: none
+    series_colors:
+      attribute_relation.count: "#ed6168"
+    show_value_labels: false
+    label_density: 25
+    x_axis_scale: auto
+    y_axis_combined: true
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    hidden_fields: []
+    listen:
+      Date: review.review_published_date
+      Location: location.location
+      Source: review.source
+    row: 2
+    col: 10
+    width: 14
+    height: 6
+  - title: Top Attribute Relations w/ Positive Sentiment
+    name: Top Attribute Relations w/ Positive Sentiment
+    model: reviewtrackers_hospitality
+    explore: review
+    type: looker_bar
+    fields: [attribute_relation.subject, attribute_relation.attribute, attribute_relation.count]
+    filters:
+      attribute_relation.sentiment_label: positive
+    sorts: [attribute_relation.count desc]
+    limit: 10
+    color_application:
+      collection_id: legacy
+      palette_id: santa_cruz
+      options:
+        steps: 5
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: false
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    plot_size_by_field: false
+    trellis: ''
+    stacking: normal
+    limit_displayed_rows: false
+    legend_position: center
+    series_types: {}
+    point_style: none
+    series_colors:
+      attribute_relation.count: "#49cec1"
+    show_value_labels: false
+    label_density: 25
+    x_axis_scale: auto
+    y_axis_combined: true
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    hidden_fields: []
+    listen:
+      Date: review.review_published_date
+      Location: location.location
+      Source: review.source
+    row: 8
     col: 10
     width: 14
     height: 6
