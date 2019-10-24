@@ -1,5 +1,11 @@
+include: "//@{CONFIG_PROJECT_NAME}/views/location.view"
+
 view: location {
-  sql_table_name: LOCATION ;;
+  extends: [location_config]
+}
+
+view: location_core {
+  sql_table_name: @{SCHEMA_NAME}.LOCATION ;;
 
   dimension: location_id {
     hidden: yes

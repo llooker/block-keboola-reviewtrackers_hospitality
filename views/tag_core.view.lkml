@@ -1,5 +1,11 @@
+include: "//@{CONFIG_PROJECT_NAME}/views/**/tag.view"
+
 view: tag {
-  sql_table_name: TAG ;;
+  extends: [tag_config]
+}
+
+view: tag_core {
+  sql_table_name: @{SCHEMA_NAME}.TAG ;;
 
   dimension: tag_id {
     primary_key: yes

@@ -1,5 +1,11 @@
+include: "//@{CONFIG_PROJECT_NAME}/views/review.view"
+
 view: review {
-  sql_table_name: REVIEW ;;
+  extends: [review_config]
+}
+
+view: review_core {
+  sql_table_name: @{SCHEMA_NAME}.REVIEW ;;
 
   dimension: review_id {
     label: "Review ID"

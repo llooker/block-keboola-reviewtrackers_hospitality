@@ -1,5 +1,11 @@
+include: "//@{CONFIG_PROJECT_NAME}/views/hierarchy_relation.view"
+
 view: hierarchy_relation {
-  sql_table_name: HIERARCHY_RELATION ;;
+  extends: [hierarchy_relation_config]
+}
+
+view: hierarchy_relation_core {
+  sql_table_name: @{SCHEMA_NAME}.HIERARCHY_RELATION ;;
 
   dimension: hierarchy_relation_id {
     primary_key: yes

@@ -1,16 +1,22 @@
-view: attribute_relation {
-  sql_table_name: ATTRIBUTE_RELATION ;;
+include: "//@{CONFIG_PROJECT_NAME}/views/sentence.view"
 
-  dimension: attribute_relation_id {
+view: sentence {
+  extends: [sentence_config]
+}
+
+view: sentence_core {
+  sql_table_name: @{SCHEMA_NAME}.SENTENCE ;;
+
+  dimension: sentence_id {
     hidden: yes
     primary_key: yes
     type: string
-    sql: ${TABLE}."ATTRIBUTE_RELATION_ID" ;;
+    sql: ${TABLE}."SENTENCE_ID" ;;
   }
 
-  dimension: attribute {
-    type: string
-    sql: ${TABLE}."ATTRIBUTE" ;;
+  dimension: order {
+    type: number
+    sql: ${TABLE}."ORDER" ;;
   }
 
   dimension: review_id {
@@ -19,9 +25,14 @@ view: attribute_relation {
     sql: ${TABLE}."REVIEW_ID" ;;
   }
 
-  dimension: subject {
+  dimension: segment {
     type: string
-    sql: ${TABLE}."SUBJECT" ;;
+    sql: ${TABLE}."SEGMENT" ;;
+  }
+
+  dimension: sentence {
+    type: string
+    sql: ${TABLE}."SENTENCE" ;;
   }
 
   dimension: sentiment_label {
@@ -35,18 +46,18 @@ view: attribute_relation {
     sql: ${TABLE}."SENTIMENT_VALUE" ;;
   }
 
-  measure: attribute_sentiment_value {
-    label: "Attribute Sentiment Value"
+  measure: sentence_sentiment_value {
+    label: "Sentence Sentiment Value"
     type: average
     sql: ${sentiment_value_dimension} ;;
     value_format: "# ##0.0#"
-    drill_fields: [detail*, attribute_sentiment_value]
+    drill_fields: [detail*, sentence_sentiment_value]
   }
 
   measure: count {
-    label: "Relations"
+    label: "Sentences"
     type: count
-    drill_fields: [detail*, subject, attribute, count]
+    drill_fields: [detail*, count]
   }
 
   # ----- Sets of fields for drilling ------

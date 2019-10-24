@@ -4,7 +4,7 @@
   elements:
   - title: Top 10 Entities Sentiment
     name: Top 10 Entities Sentiment
-    model: reviewtrackers_hospitality
+    model: block_keboola_reviewtrackers_hospitality
     explore: review
     type: looker_bar
     fields: [entity.entity, review.count, entity.sentiment_label]
@@ -63,7 +63,7 @@
     height: 6
   - title: Locations Reviews Sentiment
     name: Locations Reviews Sentiment
-    model: reviewtrackers_hospitality
+    model: block_keboola_reviewtrackers_hospitality
     explore: review
     type: looker_bar
     fields: [review.count, entity.sentiment_label, location.location]
@@ -122,7 +122,7 @@
     height: 6
   - title: Rating 5
     name: Rating 5
-    model: reviewtrackers_hospitality
+    model: block_keboola_reviewtrackers_hospitality
     explore: review
     type: table
     fields: [attribute_relation.subject, review.count]
@@ -159,7 +159,7 @@
     height: 2
   - title: Most Mentioned Drinks
     name: Most Mentioned Drinks
-    model: reviewtrackers_hospitality
+    model: block_keboola_reviewtrackers_hospitality
     explore: review
     type: looker_wordcloud
     fields: [hierarchy_relation.entity, hierarchy_relation.count]
@@ -178,7 +178,7 @@
     height: 6
   - title: Average Sentiment
     name: Average Sentiment
-    model: reviewtrackers_hospitality
+    model: block_keboola_reviewtrackers_hospitality
     explore: review
     type: looker_line
     fields: [review.sentiment_value, review.review_published_week]
@@ -235,7 +235,7 @@
     height: 6
   - title: Rating 4
     name: Rating 4
-    model: reviewtrackers_hospitality
+    model: block_keboola_reviewtrackers_hospitality
     explore: review
     type: table
     fields: [attribute_relation.subject, review.count]
@@ -265,7 +265,7 @@
     height: 6
   - title: Rating 3
     name: Rating 3
-    model: reviewtrackers_hospitality
+    model: block_keboola_reviewtrackers_hospitality
     explore: review
     type: table
     fields: [attribute_relation.subject, review.count]
@@ -295,7 +295,7 @@
     height: 6
   - title: Rating 2
     name: Rating 2
-    model: reviewtrackers_hospitality
+    model: block_keboola_reviewtrackers_hospitality
     explore: review
     type: table
     fields: [attribute_relation.subject, review.count]
@@ -325,7 +325,7 @@
     height: 6
   - title: Rating 1
     name: Rating 1
-    model: reviewtrackers_hospitality
+    model: block_keboola_reviewtrackers_hospitality
     explore: review
     type: table
     fields: [attribute_relation.subject, review.count]
@@ -362,7 +362,7 @@
     height: 2
   - title: Top Hierarchy Relations
     name: Top Hierarchy Relations
-    model: reviewtrackers_hospitality
+    model: block_keboola_reviewtrackers_hospitality
     explore: review
     type: looker_bar
     fields: [hierarchy_relation.object, hierarchy_relation.entity, hierarchy_relation.count]
@@ -437,7 +437,7 @@
     height: 2
   - title: Top Attribute Relations w/ Negative Sentiment
     name: Top Attribute Relations w/ Negative Sentiment
-    model: reviewtrackers_hospitality
+    model: block_keboola_reviewtrackers_hospitality
     explore: review
     type: looker_bar
     fields: [attribute_relation.subject, attribute_relation.attribute, attribute_relation.count]
@@ -491,7 +491,7 @@
     height: 6
   - title: Top Attribute Relations w/ Positive Sentiment
     name: Top Attribute Relations w/ Positive Sentiment
-    model: reviewtrackers_hospitality
+    model: block_keboola_reviewtrackers_hospitality
     explore: review
     type: looker_bar
     fields: [attribute_relation.subject, attribute_relation.attribute, attribute_relation.count]
@@ -556,7 +556,7 @@
     default_value: ''
     allow_multiple_values: true
     required: false
-    model: reviewtrackers_hospitality
+    model: block_keboola_reviewtrackers_hospitality
     explore: review
     listens_to_filters: []
     field: location.location
@@ -566,7 +566,7 @@
     default_value: ''
     allow_multiple_values: true
     required: false
-    model: reviewtrackers_hospitality
+    model: block_keboola_reviewtrackers_hospitality
     explore: review
     listens_to_filters: []
     field: review.source

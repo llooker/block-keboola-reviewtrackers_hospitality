@@ -1,5 +1,11 @@
+include: "//@{CONFIG_PROJECT_NAME}/views/entity.view"
+
 view: entity {
-  sql_table_name: ENTITY ;;
+  extends: [entity_config]
+}
+
+view: entity_core {
+  sql_table_name: @{SCHEMA_NAME}.ENTITY ;;
 
   dimension: entity_id {
     hidden: yes
