@@ -157,25 +157,6 @@
     col: 4
     width: 20
     height: 2
-  - title: Most Mentioned Drinks
-    name: Most Mentioned Drinks
-    model: block_keboola_reviewtrackers_hospitality
-    explore: review
-    type: looker_wordcloud
-    fields: [hierarchy_relation.entity, hierarchy_relation.count]
-    filters:
-      hierarchy_relation.object: "%drink%"
-    sorts: [hierarchy_relation.count desc]
-    limit: 20
-    series_types: {}
-    listen:
-      Date: review.review_published_date
-      Location: location.location
-      Source: review.source
-    row: 14
-    col: 0
-    width: 10
-    height: 6
   - title: Average Sentiment
     name: Average Sentiment
     model: block_keboola_reviewtrackers_hospitality
@@ -542,6 +523,22 @@
     row: 8
     col: 10
     width: 14
+    height: 6
+  - title: Most Mentioned Entities
+    name: Most Mentioned Entities
+    model: block_keboola_reviewtrackers_hospitality
+    explore: review
+    type: looker_wordcloud
+    fields: [entity.entity, entity.count]
+    limit: 20
+    series_types: {}
+    listen:
+      Date: review.review_published_date
+      Location: location.location
+      Source: review.source
+    row: 14
+    col: 0
+    width: 10
     height: 6
   filters:
   - name: Date
