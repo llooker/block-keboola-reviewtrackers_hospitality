@@ -8,8 +8,8 @@ This Block connects to data from Keboola “Reviews - Looker” Scaffold into Lo
 
 ## Data and Block Structure
 The block contains two LookML dashboards:
-Ratings Overview for understanding the relative ratings, sentiment value, responsiveness and to highlight negative reviews for handling
-NLP Analysis for deeper dive into the topics and their relative contribution to positive and negative feedback
+*  Ratings Overview for understanding the relative ratings, sentiment value, responsiveness and to highlight negative reviews for handling
+*  NLP Analysis for deeper dive into the topics and their relative contribution to positive and negative feedback
 
 The underlying model is simple and there is just one explore - “reviews”.
 
