@@ -1,9 +1,9 @@
-project_name: "block-keboola-reviewtrackers-hospitality"
+project_name: "block-keboola-reviews"
 
 ################ Constants ################
 
 constant: CONFIG_PROJECT_NAME {
-  value: "block-keboola-reviewtrackers_hospitality-config"
+  value: "block-keboola-reviews-config"
   export: override_required
 }
 
