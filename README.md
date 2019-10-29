@@ -1,4 +1,4 @@
-# Reviews
+# Voice of Customer by Keboola
 
 ## Keboola Blocks Intro (Scaffold Prerequisite)
 Looker Blocks powered by Keboola are designed to work in tandem with corresponding Keboola Scaffolds in the Keboola Connection platform. Similar to Blocks in nature, Keboola Scaffolds are templatized use-cases that can be instantly deployed into the Keboola platform, providing the whole data management and processing chain required to populate the Looker dashboards.
