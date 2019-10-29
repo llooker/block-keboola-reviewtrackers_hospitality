@@ -1,5 +1,5 @@
-- dashboard: reviewtrackers_hospitality_rating_overview
-  title: ReviewTrackers Hospitality Rating Overview
+- dashboard: voc__rating_overview
+  title: VoC - Rating Overview
   layout: newspaper
   elements:
   - title: Reviews
@@ -13,7 +13,7 @@
       Date: review.review_published_date
       Location: location.location
       Source: review.source
-    row: 6
+    row: 8
     col: 0
     width: 4
     height: 2
@@ -38,7 +38,7 @@
       Date: review.review_published_date
       Location: location.location
       Source: review.source
-    row: 0
+    row: 2
     col: 0
     width: 4
     height: 2
@@ -67,7 +67,7 @@
       Date: review.review_published_date
       Location: location.location
       Source: review.source
-    row: 2
+    row: 4
     col: 0
     width: 4
     height: 4
@@ -85,15 +85,24 @@
       palette_id: legacy_diverging1
       options:
         steps: 5
+        __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml
+        __LINE_NUM: 87
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
     y_axes: [{label: '', orientation: left, series: [{axisId: review.count, id: 1
-              - review.count, name: '1'}, {axisId: review.count, id: 2 - review.count,
-            name: '2'}, {axisId: review.count, id: 3 - review.count, name: '3'}, {
-            axisId: review.count, id: 4 - review.count, name: '4'}, {axisId: review.count,
-            id: 5 - review.count, name: '5'}], showLabels: false, showValues: true,
-        unpinAxis: false, tickDensity: default, tickDensityCustom: 5, type: linear}]
+              - review.count, name: '1', __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
+            __LINE_NUM: 91}, {axisId: review.count, id: 2 - review.count, name: '2',
+            __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
+            __LINE_NUM: 92}, {axisId: review.count, id: 3 - review.count, name: '3',
+            __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
+            __LINE_NUM: 93}, {axisId: review.count, id: 4 - review.count, name: '4',
+            __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
+            __LINE_NUM: 94}, {axisId: review.count, id: 5 - review.count, name: '5',
+            __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
+            __LINE_NUM: 94}], showLabels: false, showValues: true, unpinAxis: false,
+        tickDensity: default, tickDensityCustom: 5, type: linear, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
+        __LINE_NUM: 91}]
     show_y_axis_labels: true
     show_y_axis_ticks: true
     y_axis_tick_density: default
@@ -124,7 +133,7 @@
       Date: review.review_published_date
       Location: location.location
       Source: review.source
-    row: 0
+    row: 2
     col: 4
     width: 8
     height: 6
@@ -144,15 +153,20 @@
       palette_id: santa_cruz
       options:
         steps: 5
+        __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml
+        __LINE_NUM: 146
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
     y_axes: [{label: '', orientation: left, series: [{axisId: review.sentiment_value,
-            id: review.sentiment_value, name: Review Sentiment Value}], showLabels: true,
-        showValues: true, unpinAxis: false, tickDensity: default, type: linear}, {
-        label: !!null '', orientation: right, series: [{axisId: review.count, id: review.count,
-            name: Reviews}], showLabels: true, showValues: true, unpinAxis: false,
-        tickDensity: default, type: linear}]
+            id: review.sentiment_value, name: Review Sentiment Value, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
+            __LINE_NUM: 150}], showLabels: true, showValues: true, unpinAxis: false,
+        tickDensity: default, type: linear, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
+        __LINE_NUM: 150}, {label: !!null '', orientation: right, series: [{axisId: review.count,
+            id: review.count, name: Reviews, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
+            __LINE_NUM: 153}], showLabels: true, showValues: true, unpinAxis: false,
+        tickDensity: default, type: linear, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
+        __LINE_NUM: 153}]
     show_y_axis_labels: true
     show_y_axis_ticks: true
     y_axis_tick_density: default
@@ -183,7 +197,7 @@
     listen:
       Location: location.location
       Source: review.source
-    row: 0
+    row: 2
     col: 12
     width: 12
     height: 6
@@ -204,15 +218,24 @@
       palette_id: legacy_diverging1
       options:
         steps: 5
+        __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml
+        __LINE_NUM: 206
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
     y_axes: [{label: '', orientation: left, series: [{axisId: review.count, id: 1
-              - review.count, name: '1'}, {axisId: review.count, id: 2 - review.count,
-            name: '2'}, {axisId: review.count, id: 3 - review.count, name: '3'}, {
-            axisId: review.count, id: 4 - review.count, name: '4'}, {axisId: review.count,
-            id: 5 - review.count, name: '5'}], showLabels: false, showValues: true,
-        unpinAxis: false, tickDensity: default, tickDensityCustom: 5, type: linear}]
+              - review.count, name: '1', __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
+            __LINE_NUM: 210}, {axisId: review.count, id: 2 - review.count, name: '2',
+            __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
+            __LINE_NUM: 211}, {axisId: review.count, id: 3 - review.count, name: '3',
+            __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
+            __LINE_NUM: 212}, {axisId: review.count, id: 4 - review.count, name: '4',
+            __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
+            __LINE_NUM: 213}, {axisId: review.count, id: 5 - review.count, name: '5',
+            __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
+            __LINE_NUM: 213}], showLabels: false, showValues: true, unpinAxis: false,
+        tickDensity: default, tickDensityCustom: 5, type: linear, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
+        __LINE_NUM: 210}]
     show_y_axis_labels: true
     show_y_axis_ticks: true
     y_axis_tick_density: default
@@ -242,7 +265,7 @@
     listen:
       Location: location.location
       Source: review.source
-    row: 6
+    row: 8
     col: 12
     width: 12
     height: 6
@@ -282,7 +305,7 @@
       Date: review.review_published_date
       Location: location.location
       Source: review.source
-    row: 6
+    row: 8
     col: 4
     width: 8
     height: 6
@@ -296,7 +319,7 @@
     listen:
       Location: location.location
       Source: review.source
-    row: 10
+    row: 12
     col: 0
     width: 4
     height: 2
@@ -316,7 +339,7 @@
       Date: review.review_published_date
       Location: location.location
       Source: review.source
-    row: 8
+    row: 10
     col: 0
     width: 4
     height: 2
@@ -333,13 +356,18 @@
       palette_id: santa_cruz
       options:
         steps: 5
+        __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml
+        __LINE_NUM: 335
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
     y_axes: [{label: '', orientation: bottom, series: [{axisId: review.recent_rating,
-            id: review.recent_rating, name: Recent Rating}, {axisId: review.rating_value,
-            id: review.rating_value, name: Rating Value}], showLabels: false, showValues: false,
-        unpinAxis: false, tickDensity: default, tickDensityCustom: 5, type: linear}]
+            id: review.recent_rating, name: Recent Rating, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
+            __LINE_NUM: 339}, {axisId: review.rating_value, id: review.rating_value,
+            name: Rating Value, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
+            __LINE_NUM: 340}], showLabels: false, showValues: false, unpinAxis: false,
+        tickDensity: default, tickDensityCustom: 5, type: linear, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
+        __LINE_NUM: 339}]
     show_y_axis_labels: true
     show_y_axis_ticks: true
     y_axis_tick_density: default
@@ -372,7 +400,7 @@
       Date: review.review_published_date
       Location: location.location
       Source: review.source
-    row: 12
+    row: 14
     col: 0
     width: 12
     height: 6
@@ -402,10 +430,32 @@
     listen:
       Location: location.location
       Source: review.source
-    row: 12
+    row: 14
     col: 12
     width: 12
     height: 6
+  - name: 'Title'
+    type: text
+    subtitle_text: <font size="5px"><font color="#408ef7"><b>Voice of Customer</b></font>
+    row: 0
+    col: 0
+    width: 7
+    height: 2
+  - name: 'Header'
+    type: text
+    subtitle_text: <font size="5px"><font color="#408ef7"><b>Ratings Overview</b></font>
+    row: 0
+    col: 7
+    width: 11
+    height: 2
+  - name: 'PbK'
+    type: text
+    body_text: <a href="https://keboola.com" target="_blank"> <img src="https://www.keboola.com/data/poweredByKeboola.png"
+      width="100%"/>
+    row: 0
+    col: 18
+    width: 6
+    height: 2
   filters:
   - name: Date
     title: Date

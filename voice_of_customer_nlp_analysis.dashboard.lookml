@@ -1,5 +1,5 @@
-- dashboard: reviewtrackers_hospitality_nlp_analysis
-  title: ReviewTrackers Hospitality NLP Analysis
+- dashboard: voc__nlp_analysis
+  title: VoC - NLP Analysis
   layout: newspaper
   elements:
   - title: Top 10 Entities Sentiment
@@ -20,14 +20,20 @@
       palette_id: legacy_diverging1
       options:
         steps: 5
+        __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_nlp_analysis.dashboard.lookml
+        __LINE_NUM: 22
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
     y_axes: [{label: '', orientation: bottom, series: [{axisId: negative - review.count,
-            id: negative - review.count, name: negative}, {axisId: neutral - review.count,
-            id: neutral - review.count, name: neutral}, {axisId: positive - review.count,
-            id: positive - review.count, name: positive}], showLabels: false, showValues: true,
-        unpinAxis: false, tickDensity: default, tickDensityCustom: 5, type: linear}]
+            id: negative - review.count, name: negative, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_nlp_analysis.dashboard.lookml,
+            __LINE_NUM: 26}, {axisId: neutral - review.count, id: neutral - review.count,
+            name: neutral, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_nlp_analysis.dashboard.lookml,
+            __LINE_NUM: 27}, {axisId: positive - review.count, id: positive - review.count,
+            name: positive, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_nlp_analysis.dashboard.lookml,
+            __LINE_NUM: 28}], showLabels: false, showValues: true, unpinAxis: false,
+        tickDensity: default, tickDensityCustom: 5, type: linear, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_nlp_analysis.dashboard.lookml,
+        __LINE_NUM: 26}]
     show_y_axis_labels: true
     show_y_axis_ticks: true
     y_axis_tick_density: default
@@ -79,14 +85,20 @@
       palette_id: legacy_diverging1
       options:
         steps: 5
+        __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_nlp_analysis.dashboard.lookml
+        __LINE_NUM: 81
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
     y_axes: [{label: '', orientation: bottom, series: [{axisId: negative - review.count,
-            id: negative - review.count, name: negative}, {axisId: neutral - review.count,
-            id: neutral - review.count, name: neutral}, {axisId: positive - review.count,
-            id: positive - review.count, name: positive}], showLabels: false, showValues: true,
-        unpinAxis: false, tickDensity: default, tickDensityCustom: 5, type: linear}]
+            id: negative - review.count, name: negative, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_nlp_analysis.dashboard.lookml,
+            __LINE_NUM: 85}, {axisId: neutral - review.count, id: neutral - review.count,
+            name: neutral, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_nlp_analysis.dashboard.lookml,
+            __LINE_NUM: 86}, {axisId: positive - review.count, id: positive - review.count,
+            name: positive, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_nlp_analysis.dashboard.lookml,
+            __LINE_NUM: 87}], showLabels: false, showValues: true, unpinAxis: false,
+        tickDensity: default, tickDensityCustom: 5, type: linear, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_nlp_analysis.dashboard.lookml,
+        __LINE_NUM: 85}]
     show_y_axis_labels: true
     show_y_axis_ticks: true
     y_axis_tick_density: default
@@ -172,13 +184,16 @@
       palette_id: santa_cruz
       options:
         steps: 5
+        __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_nlp_analysis.dashboard.lookml
+        __LINE_NUM: 174
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
     y_axes: [{label: '', orientation: left, series: [{axisId: review.sentiment_value,
-            id: review.sentiment_value, name: Review Sentiment Value}], showLabels: false,
-        showValues: true, unpinAxis: false, tickDensity: default, tickDensityCustom: 5,
-        type: linear}]
+            id: review.sentiment_value, name: Review Sentiment Value, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_nlp_analysis.dashboard.lookml,
+            __LINE_NUM: 178}], showLabels: false, showValues: true, unpinAxis: false,
+        tickDensity: default, tickDensityCustom: 5, type: linear, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_nlp_analysis.dashboard.lookml,
+        __LINE_NUM: 178}]
     show_y_axis_labels: true
     show_y_axis_ticks: true
     y_axis_tick_density: default
@@ -203,7 +218,8 @@
     y_axis_combined: true
     reference_lines: [{reference_type: line, line_value: mean, range_start: max, range_end: min,
         margin_top: deviation, margin_value: mean, margin_bottom: deviation, label_position: right,
-        color: "#000000"}]
+        color: "#000000", __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_nlp_analysis.dashboard.lookml,
+        __LINE_NUM: 204}]
     show_null_points: true
     interpolation: linear
     listen:
@@ -354,6 +370,8 @@
       palette_id: santa_cruz
       options:
         steps: 5
+        __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_nlp_analysis.dashboard.lookml
+        __LINE_NUM: 356
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
@@ -394,21 +412,14 @@
     col: 10
     width: 14
     height: 6
-  - name: 'scaffold'
-    type: text
-    subtitle_text: <font size="5px"><font color="#408ef7"><b>Hospitality Reviews</b></font>
-    row: 0
-    col: 0
-    width: 7
-    height: 2
-  - name: 'dashboard'
+  - name: 'header'
     type: text
     subtitle_text: <font size="5px"><font color="#408ef7"><b>NLP Analysis</b></font>
     row: 0
     col: 7
     width: 11
     height: 2
-  - name: 'powered by'
+  - name: 'pbk'
     type: text
     body_text: <a href="https://keboola.com" target="_blank"> <img src="https://www.keboola.com/data/poweredByKeboola.png"
       width="100%"/>
@@ -431,6 +442,8 @@
       palette_id: santa_cruz
       options:
         steps: 5
+        __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_nlp_analysis.dashboard.lookml
+        __LINE_NUM: 433
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
@@ -485,6 +498,8 @@
       palette_id: santa_cruz
       options:
         steps: 5
+        __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_nlp_analysis.dashboard.lookml
+        __LINE_NUM: 487
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
@@ -540,6 +555,13 @@
     col: 0
     width: 10
     height: 6
+  - name: 'title'
+    type: text
+    subtitle_text: <font size="5px"><font color="#408ef7"><b>Voice of Customer</b></font>
+    row: 0
+    col: 0
+    width: 7
+    height: 2
   filters:
   - name: Date
     title: Date
