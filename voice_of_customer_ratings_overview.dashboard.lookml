@@ -4,7 +4,7 @@
   elements:
   - title: Reviews
     name: Reviews
-    model: block_keboola_reviewtrackers
+    model: block_keboola_reviews
     explore: review
     type: single_value
     fields: [review.count]
@@ -19,7 +19,7 @@
     height: 2
   - title: Average Rating KPI
     name: Average Rating KPI
-    model: block_keboola_reviewtrackers
+    model: block_keboola_reviews
     explore: review
     type: single_value
     fields: [review.rating_stars]
@@ -44,7 +44,7 @@
     height: 2
   - title: Average Rating Overall
     name: Average Rating Overall
-    model: block_keboola_reviewtrackers
+    model: block_keboola_reviews
     explore: review
     type: single_value
     fields: [review.rating_value, review.old_rating]
@@ -73,7 +73,7 @@
     height: 4
   - title: Reviews by Rating
     name: Reviews by Rating
-    model: block_keboola_reviewtrackers
+    model: block_keboola_reviews
     explore: review
     type: looker_column
     fields: [review.count, review.rating_dimension]
@@ -139,7 +139,7 @@
     height: 6
   - title: Reviews & Average Sentiment Last 12 Weeks
     name: Reviews & Average Sentiment Last 12 Weeks
-    model: block_keboola_reviewtrackers
+    model: block_keboola_reviews
     explore: review
     type: looker_line
     fields: [review.review_published_week, review.sentiment_value, review.count]
@@ -203,7 +203,7 @@
     height: 6
   - title: Reviews by Rating Last 12 Weeks
     name: Reviews by Rating Last 12 Weeks
-    model: block_keboola_reviewtrackers
+    model: block_keboola_reviews
     explore: review
     type: looker_column
     fields: [review.count, review.rating_dimension, review.review_published_week]
@@ -271,7 +271,7 @@
     height: 6
   - title: Locations Ratings
     name: Locations Ratings
-    model: block_keboola_reviewtrackers
+    model: block_keboola_reviews
     explore: review
     type: looker_map
     fields: [location.location_gps, review.rating_value, location.location]
@@ -311,7 +311,7 @@
     height: 6
   - title: Number of Locations
     name: Number of Locations
-    model: block_keboola_reviewtrackers
+    model: block_keboola_reviews
     explore: review
     type: single_value
     fields: [location.count]
@@ -325,7 +325,7 @@
     height: 2
   - title: Reviews w/ Response
     name: Reviews w/ Response
-    model: block_keboola_reviewtrackers
+    model: block_keboola_reviews
     explore: review
     type: single_value
     fields: [review.count, review.responded_reviews]
@@ -345,7 +345,7 @@
     height: 2
   - title: Last 14 Days vs Overall Rating
     name: Last 14 Days vs Overall Rating
-    model: block_keboola_reviewtrackers
+    model: block_keboola_reviews
     explore: review
     type: looker_bar
     fields: [location.location, review.recent_rating, review.rating_value]
@@ -406,7 +406,7 @@
     height: 6
   - title: Bad Reviews in Last 14 Days
     name: Bad Reviews in Last 14 Days
-    model: block_keboola_reviewtrackers
+    model: block_keboola_reviews
     explore: review
     type: table
     fields: [location.location, review.source, review.review_published_date, review.review_text_short,
@@ -469,7 +469,7 @@
     default_value: ''
     allow_multiple_values: true
     required: false
-    model: block_keboola_reviewtrackers
+    model: block_keboola_reviews
     explore: review
     listens_to_filters: []
     field: location.location
@@ -479,7 +479,7 @@
     default_value: ''
     allow_multiple_values: true
     required: false
-    model: block_keboola_reviewtrackers
+    model: block_keboola_reviews
     explore: review
     listens_to_filters: []
     field: review.source

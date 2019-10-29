@@ -1,5 +1,5 @@
 {
-  "label": "Reviewtrackers Restaurant Reviews",
+  "label": "Voice of Customer by Keboola",
   "category_label": "Models",
   "branding": {
     "image_uri": "https://www.keboola.com/data/poweredByKeboola.png",
@@ -20,15 +20,15 @@
   },
   "models": [
     {
-      "name": "block-keboola-reviewtrackers_hospitality",
+      "name": "block_keboola_reviews",
       "connection_constant": "CONNECTION"
     }
   ],
   "auxiliary_projects": [
     {
-      "git_uri": "git://bitbucket.org/kds_consulting_team/marketplace_reviewtrackers_hospitality_config",
-      "git_ref": "155a10e365f9b8b7b6fb65b27ce728759c68ead8",
-      "label": "Reviewtrackers Restaurant Reviews Config",
+      "git_uri": "",
+      "git_ref": "",
+      "label": "Voice of Customer by Keboola Config",
       "constant_name": "CONFIG_PROJECT_NAME"
     }
   ]
