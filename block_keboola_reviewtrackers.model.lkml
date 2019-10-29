@@ -39,7 +39,7 @@
 # other constants used by this block (Keboola will automatically create a connection
 # with this name
 
-#connection: "@{CONNECTION}"
+connection: "@{CONNECTION}"
 
 include: "/views/**/*.view"
 include: "/explores/**/*.explore.lkml"
