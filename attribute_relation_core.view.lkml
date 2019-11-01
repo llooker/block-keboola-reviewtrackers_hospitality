@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/views/attribute_relation.view"
+include: "//@{CONFIG_PROJECT_NAME}/attribute_relation.view"
 
 view: attribute_relation {
   extends: [attribute_relation_config]

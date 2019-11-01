@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/views/location.view"
+include: "//@{CONFIG_PROJECT_NAME}/location.view"
 
 view: location {
   extends: [location_config]

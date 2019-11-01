@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/views/sentence.view"
+include: "//@{CONFIG_PROJECT_NAME}/sentence.view"
 
 view: sentence {
   extends: [sentence_config]

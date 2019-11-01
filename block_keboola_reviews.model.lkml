@@ -41,11 +41,12 @@
 
 connection: "@{CONNECTION}"
 
-include: "/views/**/*.view"
-include: "/explores/**/*.explore.lkml"
+include: "*.view"
+include: "*.explore.lkml"
 include: "*.dashboard.lookml"
-include: "//@{CONFIG_PROJECT_NAME}/views/**/*.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*.view.lkml"
 include: "//@{CONFIG_PROJECT_NAME}/*.model.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*.mdashboard.lkml"
 
 explore: review {
   extends: [review_config]

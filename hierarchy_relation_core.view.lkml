@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/views/hierarchy_relation.view"
+include: "//@{CONFIG_PROJECT_NAME}/hierarchy_relation.view"
 
 view: hierarchy_relation {
   extends: [hierarchy_relation_config]

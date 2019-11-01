@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/views/entity.view"
+include: "//@{CONFIG_PROJECT_NAME}/entity.view"
 
 view: entity {
   extends: [entity_config]

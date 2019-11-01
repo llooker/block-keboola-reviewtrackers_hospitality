@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/views/review.view"
+include: "//@{CONFIG_PROJECT_NAME}/review.view"
 
 view: review {
   extends: [review_config]

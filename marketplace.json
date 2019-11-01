@@ -26,8 +26,8 @@
   ],
   "auxiliary_projects": [
     {
-      "git_uri": "",
-      "git_ref": "",
+      "git_uri": "git://github.com/llooker/block-keboola-reviewtrackers_hospitality-config.git",
+      "git_ref": "a26c879e4ccc31c5421094e5ffa2eca6a39d7de0",
       "label": "Voice of Customer by Keboola Config",
       "constant_name": "CONFIG_PROJECT_NAME"
     }

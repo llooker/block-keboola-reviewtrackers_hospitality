@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/views/**/tag.view"
+include: "//@{CONFIG_PROJECT_NAME}/**/tag.view"
 
 view: tag {
   extends: [tag_config]
