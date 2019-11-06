@@ -2,7 +2,7 @@
   "label": "Voice of the Customer with NLP by Keboola",
   "category_label": "Models",
   "branding": {
-    "image_uri": "https://www.keboola.com/data/poweredByKeboola.png",
+    "image_uri": "https://marketplace-api.looker.com/block-icons/KeboolaBrand.png",
     "tagline": "Understanding the voice of your customers has never been more important. Keboola’s Restaurant Reviews Block in partnership with ReviewTrackers gives you a detailed overview of your ratings and reviews, their topics, and a quick view of issues and opportunities. The included Natural Language Processing engine is specifically trained for this Block, and can be expanded to recognize and flag mentions, for example of specific menu items."
   },
 
