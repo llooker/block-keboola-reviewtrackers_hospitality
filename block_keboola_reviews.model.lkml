@@ -46,7 +46,7 @@ include: "*.explore.lkml"
 include: "*.dashboard.lookml"
 include: "//@{CONFIG_PROJECT_NAME}/*.view.lkml"
 include: "//@{CONFIG_PROJECT_NAME}/*.model.lkml"
-include: "//@{CONFIG_PROJECT_NAME}/*.mdashboard.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*.dashboard.lkml"
 
 explore: review {
   extends: [review_config]
