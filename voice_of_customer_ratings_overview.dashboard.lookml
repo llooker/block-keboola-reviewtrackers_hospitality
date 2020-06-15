@@ -2,21 +2,6 @@
   title: VoC - Rating Overview
   layout: newspaper
   elements:
-  - title: Reviews
-    name: Reviews
-    model: block_keboola_reviews
-    explore: review
-    type: single_value
-    fields: [review.count]
-    limit: 500
-    listen:
-      Date: review.review_published_date
-      Location: location.location
-      Source: review.source
-    row: 8
-    col: 0
-    width: 4
-    height: 2
   - title: Average Rating KPI
     name: Average Rating KPI
     model: block_keboola_reviews
@@ -71,204 +56,55 @@
     col: 0
     width: 4
     height: 4
-  - title: Reviews by Rating
-    name: Reviews by Rating
+  - title: Reviews
+    name: Reviews
     model: block_keboola_reviews
     explore: review
-    type: looker_column
-    fields: [review.count, review.rating_dimension]
-    pivots: [review.rating_dimension]
-    sorts: [review.rating_dimension]
+    type: single_value
+    fields: [review.count]
     limit: 500
-    color_application:
-      collection_id: legacy
-      palette_id: legacy_diverging1
-      options:
-        steps: 5
-        __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml
-        __LINE_NUM: 87
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: false
-    y_axes: [{label: '', orientation: left, series: [{axisId: review.count, id: 1
-              - review.count, name: '1', __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
-            __LINE_NUM: 91}, {axisId: review.count, id: 2 - review.count, name: '2',
-            __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
-            __LINE_NUM: 92}, {axisId: review.count, id: 3 - review.count, name: '3',
-            __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
-            __LINE_NUM: 93}, {axisId: review.count, id: 4 - review.count, name: '4',
-            __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
-            __LINE_NUM: 94}, {axisId: review.count, id: 5 - review.count, name: '5',
-            __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
-            __LINE_NUM: 94}], showLabels: false, showValues: true, unpinAxis: false,
-        tickDensity: default, tickDensityCustom: 5, type: linear, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
-        __LINE_NUM: 91}]
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: false
-    show_x_axis_ticks: true
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows: false
-    legend_position: center
-    series_types: {}
-    point_style: none
-    series_colors: {}
-    show_value_labels: true
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
     listen:
       Date: review.review_published_date
       Location: location.location
       Source: review.source
-    row: 2
-    col: 4
-    width: 8
-    height: 6
-  - title: Reviews & Average Sentiment Last 12 Weeks
-    name: Reviews & Average Sentiment Last 12 Weeks
-    model: block_keboola_reviews
-    explore: review
-    type: looker_line
-    fields: [review.review_published_week, review.sentiment_value, review.count]
-    fill_fields: [review.review_published_week]
-    filters:
-      review.review_published_week: 12 weeks
-    sorts: [review.review_published_week desc]
-    limit: 500
-    color_application:
-      collection_id: legacy
-      palette_id: santa_cruz
-      options:
-        steps: 5
-        __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml
-        __LINE_NUM: 146
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: false
-    y_axes: [{label: '', orientation: left, series: [{axisId: review.sentiment_value,
-            id: review.sentiment_value, name: Review Sentiment Value, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
-            __LINE_NUM: 150}], showLabels: true, showValues: true, unpinAxis: false,
-        tickDensity: default, type: linear, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
-        __LINE_NUM: 150}, {label: !!null '', orientation: right, series: [{axisId: review.count,
-            id: review.count, name: Reviews, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
-            __LINE_NUM: 153}], showLabels: true, showValues: true, unpinAxis: false,
-        tickDensity: default, type: linear, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
-        __LINE_NUM: 153}]
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: false
-    show_x_axis_ticks: true
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows: false
-    hide_legend: true
-    legend_position: center
-    series_types:
-      review.count: area
-    point_style: none
-    series_colors:
-      review.count: "#1ea8df"
-      review.sentiment_value: "#353b49"
-    show_value_labels: false
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    show_null_points: true
-    interpolation: linear
-    listen:
-      Location: location.location
-      Source: review.source
-    row: 2
-    col: 12
-    width: 12
-    height: 6
-  - title: Reviews by Rating Last 12 Weeks
-    name: Reviews by Rating Last 12 Weeks
-    model: block_keboola_reviews
-    explore: review
-    type: looker_column
-    fields: [review.count, review.rating_dimension, review.review_published_week]
-    pivots: [review.rating_dimension]
-    fill_fields: [review.review_published_week]
-    filters:
-      review.review_published_week: 12 weeks
-    sorts: [review.rating_dimension, review.review_published_week desc]
-    limit: 500
-    color_application:
-      collection_id: legacy
-      palette_id: legacy_diverging1
-      options:
-        steps: 5
-        __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml
-        __LINE_NUM: 206
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: false
-    y_axes: [{label: '', orientation: left, series: [{axisId: review.count, id: 1
-              - review.count, name: '1', __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
-            __LINE_NUM: 210}, {axisId: review.count, id: 2 - review.count, name: '2',
-            __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
-            __LINE_NUM: 211}, {axisId: review.count, id: 3 - review.count, name: '3',
-            __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
-            __LINE_NUM: 212}, {axisId: review.count, id: 4 - review.count, name: '4',
-            __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
-            __LINE_NUM: 213}, {axisId: review.count, id: 5 - review.count, name: '5',
-            __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
-            __LINE_NUM: 213}], showLabels: false, showValues: true, unpinAxis: false,
-        tickDensity: default, tickDensityCustom: 5, type: linear, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
-        __LINE_NUM: 210}]
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: false
-    show_x_axis_ticks: true
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: normal
-    limit_displayed_rows: false
-    legend_position: center
-    series_types: {}
-    point_style: none
-    series_colors: {}
-    show_value_labels: false
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
-    listen:
-      Location: location.location
-      Source: review.source
     row: 8
-    col: 12
-    width: 12
-    height: 6
+    col: 0
+    width: 4
+    height: 2
+  - title: Reviews w/ Response
+    name: Reviews w/ Response
+    model: block_keboola_reviews
+    explore: review
+    type: single_value
+    fields: [review.count, review.responded_reviews]
+    limit: 500
+    dynamic_fields: [{table_calculation: reviews_w_response, label: Reviews w/ Response,
+        expression: "${review.responded_reviews}/${review.count}", value_format: !!null '',
+        value_format_name: percent_1, _kind_hint: measure, _type_hint: number}]
+    hidden_fields: [review.count, review.responded_reviews]
+    series_types: {}
+    listen:
+      Date: review.review_published_date
+      Location: location.location
+      Source: review.source
+    row: 10
+    col: 0
+    width: 4
+    height: 2
+  - title: Number of Locations
+    name: Number of Locations
+    model: block_keboola_reviews
+    explore: review
+    type: single_value
+    fields: [location.count]
+    limit: 500
+    listen:
+      Location: location.location
+      Source: review.source
+    row: 12
+    col: 0
+    width: 4
+    height: 2
   - title: Locations Ratings
     name: Locations Ratings
     model: block_keboola_reviews
@@ -309,65 +145,31 @@
     col: 4
     width: 8
     height: 6
-  - title: Number of Locations
-    name: Number of Locations
+  - title: Reviews & Average Sentiment Last 12 Weeks
+    name: Reviews & Average Sentiment Last 12 Weeks
     model: block_keboola_reviews
     explore: review
-    type: single_value
-    fields: [location.count]
-    limit: 500
-    listen:
-      Location: location.location
-      Source: review.source
-    row: 12
-    col: 0
-    width: 4
-    height: 2
-  - title: Reviews w/ Response
-    name: Reviews w/ Response
-    model: block_keboola_reviews
-    explore: review
-    type: single_value
-    fields: [review.count, review.responded_reviews]
-    limit: 500
-    dynamic_fields: [{table_calculation: reviews_w_response, label: Reviews w/ Response,
-        expression: "${review.responded_reviews}/${review.count}", value_format: !!null '',
-        value_format_name: percent_1, _kind_hint: measure, _type_hint: number}]
-    hidden_fields: [review.count, review.responded_reviews]
-    series_types: {}
-    listen:
-      Date: review.review_published_date
-      Location: location.location
-      Source: review.source
-    row: 10
-    col: 0
-    width: 4
-    height: 2
-  - title: Last 14 Days vs Overall Rating
-    name: Last 14 Days vs Overall Rating
-    model: block_keboola_reviews
-    explore: review
-    type: looker_bar
-    fields: [location.location, review.recent_rating, review.rating_value]
-    sorts: [review.recent_rating desc]
+    type: looker_line
+    fields: [review.review_published_week, review.sentiment_value, review.count]
+    fill_fields: [review.review_published_week]
+    filters:
+      review.review_published_week: 12 weeks
+    sorts: [review.review_published_week desc]
     limit: 500
     color_application:
       collection_id: legacy
       palette_id: santa_cruz
       options:
         steps: 5
-        __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml
-        __LINE_NUM: 335
     x_axis_gridlines: false
     y_axis_gridlines: true
     show_view_names: false
-    y_axes: [{label: '', orientation: bottom, series: [{axisId: review.recent_rating,
-            id: review.recent_rating, name: Recent Rating, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
-            __LINE_NUM: 339}, {axisId: review.rating_value, id: review.rating_value,
-            name: Rating Value, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
-            __LINE_NUM: 340}], showLabels: false, showValues: false, unpinAxis: false,
-        tickDensity: default, tickDensityCustom: 5, type: linear, __FILE: block-keboola-reviewtrackers_hospitality/reviewtrackers_hospitality_ratings_overview.dashboard.lookml,
-        __LINE_NUM: 339}]
+    y_axes: [{label: '', orientation: left, series: [{axisId: review.sentiment_value,
+            id: review.sentiment_value, name: Review Sentiment Value}], showLabels: true,
+        showValues: true, unpinAxis: false, tickDensity: default, type: linear}, {
+        label: !!null '', orientation: right, series: [{axisId: review.count, id: review.count,
+            name: Reviews}], showLabels: true, showValues: true, unpinAxis: false,
+        tickDensity: default, type: linear}]
     show_y_axis_labels: true
     show_y_axis_ticks: true
     y_axis_tick_density: default
@@ -381,27 +183,25 @@
     trellis: ''
     stacking: ''
     limit_displayed_rows: false
+    hide_legend: true
     legend_position: center
-    series_types: {}
+    series_types:
+      review.count: area
     point_style: none
     series_colors:
-      review.recent_rating: "#1ea8df"
-      review.rating_value: "#353b49"
-    show_value_labels: true
+      review.count: "#1ea8df"
+      review.sentiment_value: "#353b49"
+    show_value_labels: false
     label_density: 25
     x_axis_scale: auto
     y_axis_combined: true
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
+    show_null_points: true
+    interpolation: linear
     listen:
-      Date: review.review_published_date
       Location: location.location
       Source: review.source
-    row: 14
-    col: 0
+    row: 2
+    col: 12
     width: 12
     height: 6
   - title: Bad Reviews in Last 14 Days
@@ -434,21 +234,25 @@
     col: 12
     width: 12
     height: 6
-  - name: 'Title'
+  - name: ''
     type: text
+    title_text: ''
     subtitle_text: <font size="5px"><font color="#408ef7"><b>Voice of Customer</b></font>
+    body_text: ''
     row: 0
     col: 0
     width: 7
     height: 2
-  - name: 'Header'
+  - name: " (2)"
     type: text
-    subtitle_text: <font size="5px"><font color="#408ef7"><b>Ratings Overview</b></font>
+    title_text: ''
+    subtitle_text: <font size="5px"><font color="#408ef7"><b>Overview</b></font>
+    body_text: ''
     row: 0
     col: 7
     width: 11
     height: 2
-  - name: 'PbK'
+  - name: " (3)"
     type: text
     body_text: <a href="https://keboola.com" target="_blank"> <img src="https://keboola-resources.s3.amazonaws.com/poweredByKeboola.png"
       width="100%"/>
@@ -456,6 +260,203 @@
     col: 18
     width: 6
     height: 2
+  - title: Reviews by Rating
+    name: Reviews by Rating
+    model: block_keboola_reviews
+    explore: review
+    type: looker_column
+    fields: [review.count, review.rating_dimension]
+    pivots: [review.rating_dimension]
+    sorts: [review.rating_dimension]
+    limit: 500
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: false
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: false
+    show_x_axis_ticks: true
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    plot_size_by_field: false
+    trellis: ''
+    stacking: ''
+    limit_displayed_rows: false
+    legend_position: center
+    point_style: none
+    show_value_labels: true
+    label_density: 25
+    x_axis_scale: auto
+    y_axis_combined: true
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    color_application:
+      collection_id: legacy
+      custom:
+        id: 66de995f-921b-d63d-1671-7157b8b98479
+        label: Custom
+        type: continuous
+        stops:
+        - color: "#EA626A"
+          offset: 0
+        - color: "#e7b32a"
+          offset: 50
+        - color: "#50cec0"
+          offset: 100
+      options:
+        steps: 5
+    y_axes: [{label: '', orientation: left, series: [{axisId: review.count, id: 1
+              - review.count, name: '1'}, {axisId: review.count, id: 2 - review.count,
+            name: '2'}, {axisId: review.count, id: 3 - review.count, name: '3'}, {
+            axisId: review.count, id: 4 - review.count, name: '4'}, {axisId: review.count,
+            id: 5 - review.count, name: '5'}], showLabels: false, showValues: true,
+        unpinAxis: false, tickDensity: default, tickDensityCustom: 5, type: linear}]
+    series_types: {}
+    series_colors: {}
+    defaults_version: 1
+    listen:
+      Date: review.review_published_date
+      Location: location.location
+      Source: review.source
+    row: 2
+    col: 4
+    width: 8
+    height: 6
+  - title: Reviews by Rating Last 12 Weeks
+    name: Reviews by Rating Last 12 Weeks
+    model: block_keboola_reviews
+    explore: review
+    type: looker_column
+    fields: [review.count, review.rating_dimension, review.review_published_week]
+    pivots: [review.rating_dimension]
+    fill_fields: [review.review_published_week]
+    filters:
+      review.review_published_week: 12 weeks
+    sorts: [review.rating_dimension, review.review_published_week desc]
+    limit: 500
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: false
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: false
+    show_x_axis_ticks: true
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    plot_size_by_field: false
+    trellis: ''
+    stacking: normal
+    limit_displayed_rows: false
+    legend_position: center
+    point_style: none
+    show_value_labels: false
+    label_density: 25
+    x_axis_scale: auto
+    y_axis_combined: true
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    color_application:
+      collection_id: legacy
+      custom:
+        id: 15847ce1-c818-7424-6488-817227eee916
+        label: Custom
+        type: continuous
+        stops:
+        - color: "#ea626a"
+          offset: 0
+        - color: "#e7b32a"
+          offset: 50
+        - color: "#50cec0"
+          offset: 100
+      options:
+        steps: 5
+    y_axes: [{label: '', orientation: left, series: [{axisId: review.count, id: 1
+              - review.count, name: '1'}, {axisId: review.count, id: 2 - review.count,
+            name: '2'}, {axisId: review.count, id: 3 - review.count, name: '3'}, {
+            axisId: review.count, id: 4 - review.count, name: '4'}, {axisId: review.count,
+            id: 5 - review.count, name: '5'}], showLabels: false, showValues: true,
+        unpinAxis: false, tickDensity: default, tickDensityCustom: 5, type: linear}]
+    series_types: {}
+    series_colors: {}
+    defaults_version: 1
+    listen:
+      Location: location.location
+      Source: review.source
+    row: 8
+    col: 12
+    width: 12
+    height: 6
+  - title: Last 14 Days vs Overall Rating
+    name: Last 14 Days vs Overall Rating
+    model: block_keboola_reviews
+    explore: review
+    type: looker_bar
+    fields: [location.location, review.recent_rating, review.rating_value]
+    sorts: [review.recent_rating desc]
+    limit: 500
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: false
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: false
+    show_x_axis_ticks: true
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    plot_size_by_field: false
+    trellis: ''
+    stacking: ''
+    limit_displayed_rows: false
+    legend_position: center
+    point_style: none
+    show_value_labels: true
+    label_density: 25
+    x_axis_scale: auto
+    y_axis_combined: true
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    color_application:
+      collection_id: legacy
+      palette_id: santa_cruz
+      options:
+        steps: 5
+    y_axes: [{label: '', orientation: bottom, series: [{axisId: review.recent_rating,
+            id: review.recent_rating, name: Recent Rating}, {axisId: review.rating_value,
+            id: review.rating_value, name: Rating Value}], showLabels: false, showValues: false,
+        unpinAxis: false, tickDensity: default, tickDensityCustom: 5, type: linear}]
+    series_types: {}
+    series_colors:
+      review.recent_rating: "#1ea8df"
+      review.rating_value: "#353b49"
+    series_labels:
+      review.rating_value: Overall Rating
+    defaults_version: 1
+    listen:
+      Date: review.review_published_date
+      Location: location.location
+      Source: review.source
+    row: 14
+    col: 0
+    width: 12
+    height: 6
   filters:
   - name: Date
     title: Date

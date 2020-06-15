@@ -41,6 +41,11 @@ view: attribute_relation_core {
     sql: ${TABLE}."SENTIMENT_VALUE" ;;
   }
 
+  dimension: attribute_relation {
+    type: string
+    sql: ${attribute} || ' ' || ${subject} ;;
+  }
+
   measure: attribute_sentiment_value {
     label: "Attribute Sentiment Value"
     type: average
