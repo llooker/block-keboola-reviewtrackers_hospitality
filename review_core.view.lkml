@@ -60,7 +60,11 @@ view: review_core {
 
   dimension: review_text_short {
     type: string
-    sql: IFF(LENGTH(${review_text})>256,LEFT(${review_text},253)||'...',${review_text}) ;;
+    sql: (CASE
+            WHEN LENGTH(${review_text})>256
+            THEN LEFT(${review_text},253)||'...'
+            ELSE ${review_text}
+          END) ;;
     drill_fields: [detail*, review_text]
   }
 
@@ -76,7 +80,11 @@ view: review_core {
 
   dimension: response_text_short {
     type: string
-    sql: IFF(LENGTH(${response_text})>256,LEFT(${response_text},253)||'...',${response_text}) ;;
+    sql: (CASE
+            WHEN LENGTH(${response_text})>256
+            THEN LEFT(${response_text},253)||'...'
+            ELSE ${response_text})
+          END) ;;
     drill_fields: [detail*, review_text]
   }
 
