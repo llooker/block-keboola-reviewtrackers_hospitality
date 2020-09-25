@@ -62,7 +62,7 @@ view: review_core {
     type: string
     sql: (CASE
             WHEN LENGTH(${review_text})>256
-            THEN LEFT(${review_text},253)||'...'
+            THEN CONCAT(LEFT(${review_text},253), '...')
             ELSE ${review_text}
           END) ;;
     drill_fields: [detail*, review_text]
@@ -82,7 +82,7 @@ view: review_core {
     type: string
     sql: (CASE
             WHEN LENGTH(${response_text})>256
-            THEN LEFT(${response_text},253)||'...'
+            THEN CONCAT(LEFT(${response_text},253), '...')
             ELSE ${response_text})
           END) ;;
     drill_fields: [detail*, review_text]

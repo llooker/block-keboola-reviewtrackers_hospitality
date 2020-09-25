@@ -43,7 +43,7 @@ view: attribute_relation_core {
 
   dimension: attribute_relation {
     type: string
-    sql: ${attribute} || ' ' || ${subject} ;;
+    sql: CONCAT(${attribute}, ' ', ${subject}) ;;
   }
 
   measure: attribute_sentiment_value {
