@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/review.view"
-
 view: review {
-  extends: [review_config]
-}
-
-view: review_core {
   sql_table_name: @{SCHEMA_NAME}.REVIEW ;;
 
   dimension: review_id {
@@ -167,11 +161,11 @@ view: review_core {
     sql: ${rating_dimension} ;;
     view_label: ""
     html:
-      {%if {{value}} > 0.5%}
-        {%if {{value}} > 1.5%}
-          {%if {{value}} > 2.5%}
-            {%if {{value}} > 3.5%}
-              {%if {{value}} > 4.5%}
+      {%if value > 0.5%}
+        {%if value > 1.5%}
+          {%if value > 2.5%}
+            {%if value > 3.5%}
+              {%if value > 4.5%}
               ✪ ✪ ✪ ✪ ✪
               {%else%}
               ✪ ✪ ✪ ✪

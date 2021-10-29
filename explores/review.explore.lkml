@@ -1,7 +1,12 @@
-explore: review_core {
-  hidden: yes
-  extension: required
+include: "/views/review.view"
+include: "/views/entity.view"
+include: "/views/location.view"
+include: "/views/attribute_relation.view"
+include: "/views/hierarchy_relation.view"
+include: "/views/sentence.view"
+include: "/views/tag.view"
 
+explore: review {
   join: entity {
     type: left_outer
     sql_on: ${review.review_id} = ${entity.review_id} ;;

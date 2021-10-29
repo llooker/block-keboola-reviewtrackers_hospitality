@@ -4,7 +4,7 @@
   elements:
   - title: Rating 5
     name: Rating 5
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     type: table
     fields: [attribute_relation.subject, review.count]
@@ -41,7 +41,7 @@
     height: 2
   - title: Most Mentioned Entities
     name: Most Mentioned Entities
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     type: looker_wordcloud
     fields: [entity.entity, entity.count]
@@ -57,7 +57,7 @@
     height: 6
   - title: Average Sentiment
     name: Average Sentiment
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     type: looker_line
     fields: [review.sentiment_value, review.review_published_week]
@@ -114,7 +114,7 @@
     height: 6
   - title: Rating 4
     name: Rating 4
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     type: table
     fields: [attribute_relation.subject, review.count]
@@ -144,7 +144,7 @@
     height: 6
   - title: Rating 3
     name: Rating 3
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     type: table
     fields: [attribute_relation.subject, review.count]
@@ -174,7 +174,7 @@
     height: 6
   - title: Rating 2
     name: Rating 2
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     type: table
     fields: [attribute_relation.subject, review.count]
@@ -204,7 +204,7 @@
     height: 6
   - title: Rating 1
     name: Rating 1
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     type: table
     fields: [attribute_relation.subject, review.count]
@@ -264,7 +264,7 @@
     height: 2
   - title: Top 10 Entities Sentiment
     name: Top 10 Entities Sentiment
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     type: looker_bar
     fields: [entity.entity, review.count, entity.sentiment_label]
@@ -335,7 +335,7 @@
     height: 6
   - title: Top Attribute Relations w/ Negative Sentiment
     name: Top Attribute Relations w/ Negative Sentiment
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     type: looker_bar
     fields: [attribute_relation.count, attribute_relation.attribute_relation]
@@ -394,7 +394,7 @@
     height: 6
   - title: Top Attribute Relations w/ Positive Sentiment
     name: Top Attribute Relations w/ Positive Sentiment
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     type: looker_bar
     fields: [attribute_relation.count, attribute_relation.attribute_relation]
@@ -452,7 +452,7 @@
     height: 6
   - title: Top Subjects Sentiment Share
     name: Top Subjects Sentiment Share
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     type: looker_bar
     fields: [attribute_relation.sentiment_label, attribute_relation.count, attribute_relation.subject]
@@ -519,7 +519,7 @@
     height: 6
   - title: Locations Reviews Sentiment
     name: Locations Reviews Sentiment
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     type: looker_bar
     fields: [review.count, location.location, review.sentiment_label]
@@ -601,7 +601,7 @@
     default_value: ''
     allow_multiple_values: true
     required: false
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     listens_to_filters: []
     field: location.location
@@ -611,7 +611,7 @@
     default_value: ''
     allow_multiple_values: true
     required: false
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     listens_to_filters: []
     field: review.source

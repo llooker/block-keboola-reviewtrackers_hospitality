@@ -14,3 +14,7 @@ The block contains two LookML dashboards:
 The underlying model is simple and there is just one explore - “reviews”.
 
 As a standard, the data gets provided as a connection to Keboola-provided Snowflake, but it can be easily changed to your own data warehouse of choice during the setup.
+
+## Customization
+The LookML contents of this block can also be modified/extended to best fit all use cases.
+This block utilizes Refinement files for customization. For more information on using refinements to customize marketplace blocks, please see [this documentation](https://docs.looker.com/data-modeling/marketplace/customize-blocks).

@@ -1,17 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/entity.view"
+view: hierarchy_relation {
+  sql_table_name: @{SCHEMA_NAME}.HIERARCHY_RELATION ;;
 
-view: entity {
-  extends: [entity_config]
-}
-
-view: entity_core {
-  sql_table_name: @{SCHEMA_NAME}.ENTITY ;;
-
-  dimension: entity_id {
-    hidden: yes
+  dimension: hierarchy_relation_id {
     primary_key: yes
     type: string
-    sql: ${TABLE}."ENTITY_ID" ;;
+    sql: ${TABLE}."HIERARCHY_RELATION_ID" ;;
   }
 
   dimension: entity {
@@ -19,9 +12,9 @@ view: entity_core {
     sql: ${TABLE}."ENTITY" ;;
   }
 
-  dimension: entity_type {
+  dimension: object {
     type: string
-    sql: ${TABLE}."ENTITY_TYPE" ;;
+    sql: ${TABLE}."OBJECT" ;;
   }
 
   dimension: review_id {
@@ -41,18 +34,18 @@ view: entity_core {
     sql: ${TABLE}."SENTIMENT_VALUE" ;;
   }
 
-  measure: entity_sentiment_value {
-    label: "Entity Sentiment Value"
+  measure: hierarchy_sentiment_value {
+    label: "Hierarchy Sentiment Value"
     type: average
     sql: ${sentiment_value_dimension} ;;
     value_format: "# ##0.0#"
-    drill_fields: [detail*, entity_sentiment_value]
+    drill_fields: [detail*, hierarchy_sentiment_value]
   }
 
   measure: count {
-    label: "Entities"
+    label: "Relations"
     type: count
-    drill_fields: [detail*, entity_type, entity, count]
+    drill_fields: [detail*, object, entity, count]
   }
 
   # ----- Sets of fields for drilling ------
