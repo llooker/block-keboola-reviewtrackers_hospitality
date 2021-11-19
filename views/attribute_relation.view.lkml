@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/attribute_relation.view"
-
 view: attribute_relation {
-  extends: [attribute_relation_config]
-}
-
-view: attribute_relation_core {
   sql_table_name: @{SCHEMA_NAME}.ATTRIBUTE_RELATION ;;
 
   dimension: attribute_relation_id {

@@ -27,7 +27,7 @@
     height: 2
   - title: Top Subjects Sentiment Share in Topic Related Reviews
     name: Top Subjects Sentiment Share in Topic Related Reviews
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     type: looker_bar
     fields: [attribute_relation.sentiment_label, attribute_relation.count, attribute_relation.subject]
@@ -89,7 +89,7 @@
     height: 10
   - title: Review Related to Topic
     name: Review Related to Topic
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     type: single_value
     fields: [review.count]
@@ -116,7 +116,7 @@
     height: 5
   - title: Rating  of Reviews Related to Topic
     name: Rating  of Reviews Related to Topic
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     type: single_value
     fields: [review.rating_stars]
@@ -143,7 +143,7 @@
     height: 5
   - title: Most Mentioned Attribute Relations of the Topic
     name: Most Mentioned Attribute Relations of the Topic
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     type: looker_wordcloud
     fields: [attribute_relation.count, attribute_relation.attribute_relation]
@@ -162,7 +162,7 @@
     height: 8
   - title: Last Reviews Related to the Topic
     name: Last Reviews Related to the Topic
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     type: looker_grid
     fields: [review.review_published_date, review.review_title, review.review_text_short,
@@ -204,7 +204,7 @@
     height: 8
   - title: Entities Related to Topic Object
     name: Entities Related to Topic Object
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     type: looker_pie
     fields: [review.count, hierarchy_relation.entity]
@@ -277,7 +277,7 @@
     height: 10
   - title: Topic Related Reviews by Location and Rating
     name: Topic Related Reviews by Location and Rating
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     type: looker_bar
     fields: [review.count, location.location, review.rating_dimension]
@@ -360,7 +360,7 @@
     default_value: ''
     allow_multiple_values: true
     required: false
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     listens_to_filters: []
     field: location.location
@@ -370,7 +370,7 @@
     default_value: ''
     allow_multiple_values: true
     required: false
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     listens_to_filters: []
     field: review.source
@@ -380,7 +380,7 @@
     default_value: ''
     allow_multiple_values: true
     required: true
-    model: block_keboola_reviews
+    model: block_keboola_reviews_v2
     explore: review
     listens_to_filters: []
     field: hierarchy_relation.object

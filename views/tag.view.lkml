@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/**/tag.view"
-
 view: tag {
-  extends: [tag_config]
-}
-
-view: tag_core {
   sql_table_name: @{SCHEMA_NAME}.TAG ;;
 
   dimension: tag_id {

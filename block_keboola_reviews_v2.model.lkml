@@ -41,13 +41,9 @@
 
 connection: "@{CONNECTION}"
 
-include: "*.view"
-include: "*.explore.lkml"
-include: "*.dashboard.lookml"
-include: "//@{CONFIG_PROJECT_NAME}/*.view.lkml"
-include: "//@{CONFIG_PROJECT_NAME}/*.model.lkml"
-include: "//@{CONFIG_PROJECT_NAME}/*.dashboard.lkml"
-
-explore: review {
-  extends: [review_config]
-}
+## Include Explore
+include: "/explores/review.explore.lkml"
+## Include Dashboards
+include: "/dashboards/voice_of_customer_nlp_analysis.dashboard.lookml"
+include: "/dashboards/voice_of_customer_nlp_topic_analysis.dashboard.lookml"
+include: "/dashboards/voice_of_customer_ratings_overview.dashboard.lookml"

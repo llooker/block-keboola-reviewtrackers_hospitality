@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/sentence.view"
-
 view: sentence {
-  extends: [sentence_config]
-}
-
-view: sentence_core {
   sql_table_name: @{SCHEMA_NAME}.SENTENCE ;;
 
   dimension: sentence_id {
